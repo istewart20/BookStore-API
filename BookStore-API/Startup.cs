@@ -1,4 +1,6 @@
 using BookStore_API.Data;
+using BookStore_API.Interfaces;
+using BookStore_API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -47,6 +49,9 @@ namespace BookStore_API
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddSingleton<ILoggerService, LoggerService>();
+
             services.AddControllers();
         }
 
