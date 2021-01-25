@@ -4,11 +4,10 @@
         <name>BookStore-API</name>
     </assembly>
     <members>
-        <member name="M:BookStore_API.Controllers.HomeController.Get">
+        <member name="T:BookStore_API.Controllers.HomeController">
             <summary>
-            Get all Books
+            
             </summary>
-            <returns></returns>
         </member>
     </members>
 </doc>

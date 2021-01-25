@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookStore_API.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,17 @@ namespace BookStore_API.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
+        private readonly ILoggerService _logger;
+        public HomeController(ILoggerService logger)
+        {
+            _logger = logger;
+        }
+
         // GET: api/<HomeController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            _logger.LogInfo("GET: api/<HomeController> called");
             return new string[] { "value1", "value2" };
         }
 
