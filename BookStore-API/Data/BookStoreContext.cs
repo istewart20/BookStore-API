@@ -14,7 +14,7 @@ namespace BookStore_API.Data
         }
 
         public virtual DbSet<Author> Authors { get; set; }
-        public virtual DbSet<Books> Books { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,7 +34,7 @@ namespace BookStore_API.Data
                 entity.Property(e => e.Lastname).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Books>(entity =>
+            modelBuilder.Entity<Book>(entity =>
             {
                 entity.Property(e => e.Image).HasMaxLength(150);
 
